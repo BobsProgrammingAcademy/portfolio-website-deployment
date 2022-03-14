@@ -253,7 +253,7 @@ The **web** process is where we pass our **Gunicorn** config. First, we pass the
 
 #### 2. Create runtime.txt
 
-Heroku will install a default Python version if you don't specify one, but if you want to pick your Python version, you need a **runtime.txt** file.
+Heroku will install a default Python version if you don't specify one, but if you want to pick your Python version, you need to create a **runtime.txt** file.
 
 Python versions supported by Heroku are listed on:
 https://devcenter.heroku.com/articles/python-support#supported-runtimes
@@ -327,7 +327,7 @@ https://id.heroku.com/login
 
 #### 8. Create a new app using Heroku Dashboard
 
-Go to ```https://dashboard.heroku.com/apps``` and click the **Create new app** button.
+Go to https://dashboard.heroku.com/apps and click the **Create new app** button.
 
 Next, select an **app name** and specify a **region** where your application will be deployed. 
 
@@ -375,7 +375,7 @@ heroku login
 ```
 Enter any key to go to your web browser to complete the login. The Heroku CLI then logs you in automatically. 
 
-Next, provision Heroku Postgres by running the command:
+Next, provision **Heroku Postgres** by running the command:
 
 ```bash
 heroku addons:create heroku-postgresql:<PLAN_NAME>
