@@ -378,13 +378,13 @@ Enter any key to go to your web browser to complete the login. The Heroku CLI th
 Next, provision **Heroku Postgres** by running the command:
 
 ```bash
-heroku addons:create heroku-postgresql:<PLAN_NAME>
+heroku addons:create heroku-postgresql:<PLAN_NAME> --app <APP_NAME>
 ```
 
 Finally, push your local PostgreSQL database to Heroku Postgres by running the command:
 
 ```bash
-PGUSER=<USERNAME> PGPASSWORD=<PASSWORD> heroku pg:push postgres://<HOST>/<DB_NAME> <HEROKU_POSTGRES_DB_NAME>
+PGUSER=<USERNAME> PGPASSWORD=<PASSWORD> heroku pg:push postgres://<HOST>/<DB_NAME> <HEROKU_POSTGRES_DB_NAME> --app <APP_NAME>
 ```
 
 #### 13. Select the Deployment method
