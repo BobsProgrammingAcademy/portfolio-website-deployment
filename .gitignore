@@ -5,7 +5,6 @@
 .DS_Store
 .next/
 db.sqlite3
-media/
 node_modules/
 output/
 venv/
