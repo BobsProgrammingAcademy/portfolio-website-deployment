@@ -243,7 +243,7 @@ From the **root** directory run:
 touch Procfile
 ```
 
-Next, in the **Procfile** file, specify the processes your application should run. The processes specified in this file will automatically boot on deploy to Heroku.
+Next, in the **Procfile**, specify the processes your application should run. The processes specified in this file will automatically boot on deploy to Heroku.
 
 ```bash
 web: gunicorn config.wsgi --log-file -
