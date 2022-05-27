@@ -51,8 +51,16 @@ python -m venv venv
 
 From the **root** directory run:
 
+On macOS:
+
 ```bash
 source venv/bin/activate
+```
+
+On Windows:
+
+```bash
+venv\scripts\activate
 ```
 
 #### 3. Install required backend dependencies
