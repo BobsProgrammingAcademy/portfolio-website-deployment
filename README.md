@@ -18,6 +18,7 @@ This is a portfolio website built using **Django 3.2**, **Next.js 12**, and **Ma
 - [Adding data to the application](#add-data-to-the-application)
 - [Customizing the application](#customize-the-application)
 - [Deployment to Heroku](#deployment-to-heroku)
+- [Copyright and License](#copyright-and-license)
 
 
 ## Prerequisites
@@ -436,3 +437,8 @@ git push heroku master
 #### 14. View the application
 
 Go to Heroku Dashboard and click the **Open app** button to view the deployed application.
+
+
+## Copyright and License
+
+Copyright © 2022 Bob's Programming Academy. Code released under the MIT license.
