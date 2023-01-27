@@ -237,6 +237,10 @@ To modify the fonts in the application, first, add a new font to the ```src/page
 
 To modify the logo in the application, make changes in the ```src/layout/Header.js``` and ```src/layout/Sidebar.js``` files.
 
+### Changing Buttons in the Hero Section
+
+To modify the two buttons in the Hero section, make changes in the ```src/components/HeroButtons.js``` file.
+
 ### Displaying your location on the map
 
 To display your location on the map in the **Contact** section, you need to set the coordinates (latitude and longitude) of your location in the ```src/components/Contact.js``` file.
