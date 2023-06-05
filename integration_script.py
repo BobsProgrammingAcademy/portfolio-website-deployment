@@ -4,12 +4,14 @@ import os
 import subprocess
 import sys
 
+
 def install_bs4():
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'bs4'])
 
+
 try:
     from bs4 import BeautifulSoup
-except:
+except Exception:
     install_bs4()
     from bs4 import BeautifulSoup
 
@@ -24,12 +26,14 @@ def parse_args():
     args = parser.parse_args()
     return args
 
+
 def search_and_parse(soup, tag):
     for x in soup.find_all(tag):
         if x.get('src') and x['src'].startswith('/_next/'):
             x['src'] = "{% static \"" + x['src'] + "\" %}"
         if x.get('href') and x['href'].startswith('/_next/'):
             x['href'] = "{% static \"" + x['href'] + "\" %}"
+
 
 def render_html_static():
     args = parse_args()
@@ -41,5 +45,6 @@ def render_html_static():
         fout = open(html_file, 'wb')
         fout.write(soup.prettify('utf-8'))
         fout.close()
+
 
 render_html_static()
