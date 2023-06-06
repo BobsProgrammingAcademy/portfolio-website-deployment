@@ -1,5 +1,6 @@
 asgiref==3.5.0
 beautifulsoup4==4.10.0
+coverage==7.2.7
 dj-database-url==0.5.0
 Django==3.2.12
 django-cors-headers==3.11.0
