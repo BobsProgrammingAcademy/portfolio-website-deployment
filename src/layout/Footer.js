@@ -15,144 +15,144 @@ axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 const Footer = () => {
-    const theme = useTheme();
+  const theme = useTheme();
 
-    const [footer, setFooter] = React.useState([]);
+  const [footer, setFooter] = React.useState([]);
 
-    const fetchFooter = () => {
-        axios.get('/footer', {
-            headers: {
-                'Accept': 'application/json',
-                'Access-Control-Allow-Origin': process.env.BACKEND_URL,
-            }
-        })
-        .then(response => {
-            setFooter(response.data);
-        })
-        .catch(err => console.log(err));
-    };
+  const fetchFooter = () => {
+    axios
+      .get('/footer', {
+        headers: {
+          Accept: 'application/json',
+          'Access-Control-Allow-Origin': process.env.BACKEND_URL,
+        },
+      })
+      .then((response) => {
+        setFooter(response.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
-    React.useEffect(() => {
-        fetchFooter();
-    }, []);
+  React.useEffect(() => {
+    fetchFooter();
+  }, []);
 
-    return (
-        <React.Fragment>
-            <Box
-                backgroundColor={theme.palette.background.default}
-                paddingTop='1px'
-                paddingBottom='1px'
-                // sticky footer - see four values below
-                position='fixed'
-                bottom='0'
-                left='0'
-                width='100%'
-            >
-                <Divider />
-                <Box
-                    backgroundColor={theme.palette.background.default}
-                    position='relative'
-                    padding={theme.spacing(0.25)}
-                >
-                    {footer.slice(0, 1).map((item, index) => (
-                        <Grid container spacing={0} key={index}>
-                            <Hidden mdDown>
-                                <Grid container item xs={12} md={4}>
-                                    <List
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            padding: 0
-                                        }}
-                                    >
-                                        <ListItemButton component='a' href='#'>
-                                            <ListItemText 
-                                                primary={
-                                                    <Typography 
-                                                        variant='body2'
-                                                        color={theme.palette.text.secondary}
-                                                    >
-                                                        Privacy Policy
-                                                    </Typography>
-                                                }
-                                            />
-                                        </ListItemButton>
-                                        <ListItemButton component='a' href='#'>
-                                            <ListItemText 
-                                                primary={
-                                                    <Typography 
-                                                        variant='body2'
-                                                        color={theme.palette.text.secondary}
-                                                    >
-                                                        Terms of Use
-                                                    </Typography>
-                                                }
-                                            />
-                                        </ListItemButton>
-                                    </List>
-                                </Grid>
-                            </Hidden>
-                            <Grid container item xs={12} md={4} justifyContent='center'>
-                                <List>
-                                    <ListItemButton>
-                                        <ListItemText 
-                                            primary={
-                                                <Typography 
-                                                    variant='body2'
-                                                    color={theme.palette.text.secondary}
-                                                >
-                                                    Copyright &copy; {new Date().getFullYear()} {item.copyright}.
-                                                </Typography>
-                                            }
-                                        />
-                                    </ListItemButton>
-                                </List>
-                            </Grid>
+  return (
+    <React.Fragment>
+      <Box
+        backgroundColor={theme.palette.background.default}
+        paddingTop='1px'
+        paddingBottom='1px'
+        // sticky footer - see four values below
+        position='fixed'
+        bottom='0'
+        left='0'
+        width='100%'
+      >
+        <Divider />
+        <Box
+          backgroundColor={theme.palette.background.default}
+          position='relative'
+          padding={theme.spacing(0.25)}
+        >
+          {footer.slice(0, 1).map((item, index) => (
+            <Grid container spacing={0} key={index}>
+              <Hidden mdDown>
+                <Grid container item xs={12} md={4}>
+                  <List
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      padding: 0,
+                    }}
+                  >
+                    <ListItemButton component='a' href='#'>
+                      <ListItemText
+                        primary={
+                          <Typography
+                            variant='body2'
+                            color={theme.palette.text.secondary}
+                          >
+                            Privacy Policy
+                          </Typography>
+                        }
+                      />
+                    </ListItemButton>
+                    <ListItemButton component='a' href='#'>
+                      <ListItemText
+                        primary={
+                          <Typography
+                            variant='body2'
+                            color={theme.palette.text.secondary}
+                          >
+                            Terms of Use
+                          </Typography>
+                        }
+                      />
+                    </ListItemButton>
+                  </List>
+                </Grid>
+              </Hidden>
+              <Grid container item xs={12} md={4} justifyContent='center'>
+                <List>
+                  <ListItemButton>
+                    <ListItemText
+                      primary={
+                        <Typography
+                          variant='body2'
+                          color={theme.palette.text.secondary}
+                        >
+                          Copyright &copy; {new Date().getFullYear()}{' '}
+                          {item.copyright}.
+                        </Typography>
+                      }
+                    />
+                  </ListItemButton>
+                </List>
+              </Grid>
 
-                            <Grid container item xs={12} md={4} justifyContent='center'>
-                                <List>
-                                    <ListItemButton>
-                                        <ListItemText 
-                                            primary={
-                                                <Typography 
-                                                    variant='body2'
-                                                    color={theme.palette.text.secondary}
-                                                >
-                                                    Photo by
-                                                    {' '}
-                                                    <Link
-                                                        href={item.image_author_link}
-                                                        alt={item.image_author_name}
-                                                        target='_blank'
-                                                        rel='noreferrer'
-                                                        color={theme.palette.text.secondary}
-                                                    >
-                                                        {item.image_author_name}
-                                                    </Link>
-                                                    {' '}
-                                                    on
-                                                    {' '} 
-                                                    <Link 
-                                                        href={item.image_website_link}
-                                                        alt={item.image_website_name}
-                                                        target='_blank'
-                                                        rel='noreferrer'
-                                                        color={theme.palette.text.secondary}
-                                                    >
-                                                        {item.image_website_name}
-                                                    </Link>.
-                                                </Typography>
-                                            }
-                                        />
-                                    </ListItemButton>
-                                </List>
-                            </Grid>
-                        </Grid>
-                    ))}
-                </Box>
-            </Box>
-        </React.Fragment>
-    );
+              <Grid container item xs={12} md={4} justifyContent='center'>
+                <List>
+                  <ListItemButton>
+                    <ListItemText
+                      primary={
+                        <Typography
+                          variant='body2'
+                          color={theme.palette.text.secondary}
+                        >
+                          Photo by{' '}
+                          <Link
+                            href={item.image_author_link}
+                            alt={item.image_author_name}
+                            target='_blank'
+                            rel='noreferrer'
+                            color={theme.palette.text.secondary}
+                          >
+                            {item.image_author_name}
+                          </Link>{' '}
+                          on{' '}
+                          <Link
+                            href={item.image_website_link}
+                            alt={item.image_website_name}
+                            target='_blank'
+                            rel='noreferrer'
+                            color={theme.palette.text.secondary}
+                          >
+                            {item.image_website_name}
+                          </Link>
+                          .
+                        </Typography>
+                      }
+                    />
+                  </ListItemButton>
+                </List>
+              </Grid>
+            </Grid>
+          ))}
+        </Box>
+      </Box>
+    </React.Fragment>
+  );
 };
 
 export default Footer;
