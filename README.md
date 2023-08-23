@@ -1,6 +1,6 @@
 # Portfolio Website
 
-This is a portfolio website built using **Django 3**, **Django REST Framework 3**, **Next.js 12** and **Material UI 5** that uses a **PostgreSQL** database to store data.
+This is a portfolio website built using **Django 4**, **Django REST Framework 3**, **Next.js 13** and **Material UI 5** that uses a **PostgreSQL** database to store data.
 
 ### Dark mode:
 
@@ -10,8 +10,8 @@ This is a portfolio website built using **Django 3**, **Django REST Framework 3*
 
 ![plot](https://github.com/BobsProgrammingAcademy/Portfolio-Website-Deployment/blob/main/public/images/light_theme.png?raw=true)
 
+## Table of Contents
 
-## Table of Contents 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the application](#run-the-application)
@@ -19,7 +19,6 @@ This is a portfolio website built using **Django 3**, **Django REST Framework 3*
 - [Customizing the application](#customize-the-application)
 - [Deployment to Heroku](#deployment-to-heroku)
 - [Copyright and License](#copyright-and-license)
-
 
 ### Prerequisites
 
@@ -30,9 +29,10 @@ Install the following prerequisites:
 3. [PostgreSQL](https://www.postgresql.org/download/)
 4. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 5. [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
-4. [Visual Studio Code](https://code.visualstudio.com/download)
+6. [Visual Studio Code](https://code.visualstudio.com/download)
 
 Other prerequisites:
+
 1. [Heroku account](https://signup.heroku.com/)
 
 ### Installation
@@ -113,7 +113,6 @@ touch config/.env
 
 The **touch** command will create the **.env** file in the **config** directory. This command works on Mac and Linux but not on Windows. If you are a Windows user, instead of using the command line, you can create the **.env** file manually by navigating in Visual Studio Code to the Explorer, clicking on the **config** directory, and selecting the option **New File**.
 
-
 Next, declare environment variables in the **.env** file. Make sure you don't use quotation marks around the strings.
 
 ```bash
@@ -132,6 +131,7 @@ From the **root** directory run:
 ```bash
 python manage.py makemigrations
 ```
+
 ```bash
 python manage.py migrate
 ```
@@ -202,45 +202,45 @@ Go to http://127.0.0.1:8000/admin to access the Django Admin interface and sign 
 
 ### Customize the application
 
-This section describes how to customize the application. 
+This section describes how to customize the application.
 
-#### Changing Section Titles and Subtitles 
+#### Changing Section Titles and Subtitles
 
 #### 1. About
 
-To modify the title and subtitle of the **About** section, make changes in the ```src/components/About.js``` file.
+To modify the title and subtitle of the **About** section, make changes in the `src/components/About.js` file.
 
 #### 2. Projects
 
-To modify the title and subtitle of the **Projects** section, make changes in the ```src/components/Projects.js``` file.
+To modify the title and subtitle of the **Projects** section, make changes in the `src/components/Projects.js` file.
 
 #### 3. Technologies
 
-To modify the title and subtitle of the **Technologies** section, make changes in the ```src/components/Technologies.js``` file.
+To modify the title and subtitle of the **Technologies** section, make changes in the `src/components/Technologies.js` file.
 
 #### 4. Contact
 
-To modify the title and subtitle of the **Contact** section, make changes in the ```src/components/Contact.js``` file.
+To modify the title and subtitle of the **Contact** section, make changes in the `src/components/Contact.js` file.
 
 #### Changing Colors
 
-To modify the colors in the application, make changes in the ```src/theme/theme.js``` file.
+To modify the colors in the application, make changes in the `src/theme/theme.js` file.
 
 #### Changing Fonts
 
-To modify the fonts in the application, first, add a new font to the ```src/pages/_document.js``` file, and then make changes in the ```src/theme/typography.js``` file.
+To modify the fonts in the application, first, add a new font to the `src/pages/_document.js` file, and then make changes in the `src/theme/typography.js` file.
 
 #### Changing Logo
 
-To modify the logo in the application, make changes in the ```src/layout/Header.js``` and ```src/layout/Sidebar.js``` files.
+To modify the logo in the application, make changes in the `src/layout/Header.js` and `src/layout/Sidebar.js` files.
 
 #### Changing Buttons in the Hero Section
 
-To modify the two buttons in the Hero section, make changes in the ```src/components/HeroButtons.js``` file.
+To modify the two buttons in the Hero section, make changes in the `src/components/HeroButtons.js` file.
 
 #### Displaying your location on the map
 
-To display your location on the map in the **Contact** section, you need to set the coordinates (latitude and longitude) of your location in the ```src/components/Contact.js``` file.
+To display your location on the map in the **Contact** section, you need to set the coordinates (latitude and longitude) of your location in the `src/components/Contact.js` file.
 
 ### Deployment to Heroku
 
@@ -298,7 +298,7 @@ node --version
 
 ```bash
 npm --version
-``` 
+```
 
 #### 4. Add a deploy script to package.json
 
@@ -338,7 +338,7 @@ https://id.heroku.com/login
 
 Go to https://dashboard.heroku.com/apps and click the **Create new app** button.
 
-Next, select an **app name** and specify a **region** where your application will be deployed. 
+Next, select an **app name** and specify a **region** where your application will be deployed.
 
 Finally, click the **Create app** button.
 
@@ -353,8 +353,9 @@ Add your app to the **ALLOWED_HOSTS** list in the **config/settings.py** file.
 #### 10. Add Heroku Buildpacks
 
 On Heroku Dashboard, go to **Settings**, scroll down to the **Buildpacks** section, and click **Add buildpack**.
- 
+
 Add two buildpacks:
+
 - nodejs
 - python
 
@@ -362,7 +363,7 @@ Add two buildpacks:
 
 On Heroku Dashboard, go to **Settings**, scroll down to the **Config Vars** section, and click **Reveal Config Vars**.
 
-Here, add all the variables stored in the **config/.env** and **.env.production** files, and one additional variable:  DISABLE_COLLECTSTATIC.
+Here, add all the variables stored in the **config/.env** and **.env.production** files, and one additional variable: DISABLE_COLLECTSTATIC.
 
 ```bash
 SECRET_KEY=yoursecretkey
@@ -382,7 +383,8 @@ With **Heroku CLI** installed, from the **root** directory run:
 ```bash
 heroku login
 ```
-Enter any key to go to your web browser to complete the login. The Heroku CLI then logs you in automatically. 
+
+Enter any key to go to your web browser to complete the login. The Heroku CLI then logs you in automatically.
 
 Next, provision **Heroku Postgres** by running the command:
 
