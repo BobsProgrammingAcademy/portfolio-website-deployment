@@ -42,7 +42,7 @@ Other prerequisites:
 
 #### 1. Create a virtual environment
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 python -m venv venv
@@ -50,7 +50,7 @@ python -m venv venv
 
 #### 2. Activate the virtual environment
 
-From the **root** directory run:
+From the **root** directory, run:
 
 On macOS:
 
@@ -66,7 +66,7 @@ venv\scripts\activate
 
 #### 3. Install required backend dependencies
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 pip install -r requirements.txt
@@ -74,13 +74,13 @@ pip install -r requirements.txt
 
 #### 4. Set up a PostgreSQL database
 
-With **PostgreSQL** up and running, in a new Terminal window run:
+With **PostgreSQL** up and running, in a new Terminal window, run:
 
 ```bash
 dropdb --if-exists portfolio
 ```
 
-Start **psql**, which is a terminal-based front-end to PostgreSQL, by running the command:
+Start **psql**, which is a terminal-based frontend to PostgreSQL, by running the command:
 
 ```bash
 psql postgres
@@ -106,7 +106,7 @@ To quit **psql**, run:
 
 #### 5. Set up backend environment variables
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 touch config/.env
@@ -127,7 +127,7 @@ DATABASE_HOST=localhost
 
 #### 6. Run migrations
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 python manage.py makemigrations
@@ -139,7 +139,7 @@ python manage.py migrate
 
 #### 7. Create an admin user to access the Django Admin interface
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 python manage.py createsuperuser
@@ -151,7 +151,7 @@ When prompted, enter a username, email, and password.
 
 #### 1. Install required frontend dependencies
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 npm install
@@ -159,7 +159,7 @@ npm install
 
 #### 2. Set up frontend environment variables
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 touch .env.development && touch .env.production
@@ -177,7 +177,7 @@ To run the application, you need to have both the backend and the frontend up an
 
 #### 1. Run backend
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 python manage.py runserver
@@ -185,7 +185,7 @@ python manage.py runserver
 
 #### 2. Run frontend
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 npm run dev
@@ -247,7 +247,7 @@ To display your location on the map in the **Contact** section, you need to set 
 
 #### 1. Create Procfile
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 touch Procfile
@@ -268,7 +268,7 @@ Heroku will install a default Python version if you don't specify one, but if yo
 Python versions supported by Heroku are listed on:
 https://devcenter.heroku.com/articles/python-support#supported-runtimes
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 touch runtime.txt
@@ -291,7 +291,7 @@ Specify the **Node.js** and **npm** versions to be used on Heroku in the **engin
 },
 ```
 
-Always specify the Node.js and npm versions that match the runtime you’re developing and testing with. To find your versions locally run:
+Always specify the Node.js and npm versions that match the runtime you’re developing and testing with. To find your versions locally, run:
 
 ```bash
 node --version
@@ -311,7 +311,7 @@ Add the following deploy script to the **scripts** section of the **package.json
 
 #### 5. Run the deploy script
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 npm run deploy
@@ -321,7 +321,7 @@ This will create an optimized production build.
 
 #### 6. Collect static files into STATIC_ROOT
 
-From the **root** directory run:
+From the **root** directory, run:
 
 ```bash
 python manage.py collectstatic
@@ -335,7 +335,7 @@ Log in to your Heroku account:
 
 https://id.heroku.com/login
 
-#### 8. Create a new app using Heroku Dashboard
+#### 8. Create a new app using the Heroku Dashboard
 
 Go to https://dashboard.heroku.com/apps and click the **Create new app** button.
 
@@ -353,7 +353,7 @@ Add your app to the **ALLOWED_HOSTS** list in the **config/settings.py** file.
 
 #### 10. Add Heroku Buildpacks
 
-On Heroku Dashboard, go to **Settings**, scroll down to the **Buildpacks** section, and click **Add buildpack**.
+On the Heroku Dashboard, go to **Settings**, scroll down to the **Buildpacks** section, and click **Add buildpack**.
 
 Add two buildpacks:
 
@@ -379,7 +379,7 @@ DISABLE_COLLECTSTATIC=1
 
 #### 12. Set up PostgreSQL on Heroku
 
-With **Heroku CLI** installed, from the **root** directory run:
+With **Heroku CLI** installed, from the **root** directory, run:
 
 ```bash
 heroku login
@@ -411,13 +411,13 @@ If you haven't already, log in to your Heroku account by running the command:
 heroku login
 ```
 
-Next, initialize a Git repository in the project's **root** directory. From the **root** directory run:
+Next, initialize a Git repository in the project's **root** directory. From the **root** directory, run:
 
 ```bash
 git init
 ```
 
-Next, create a Heroku Remote. From the **root** directory run:
+Next, create a Heroku Remote. From the **root** directory, run:
 
 ```bash
 heroku git:remote -a <APP_NAME>
