@@ -253,7 +253,7 @@ From the **root** directory, run:
 touch Procfile
 ```
 
-Next, in the **Procfile**, specify the processes your application should run. The processes specified in this file will automatically boot on deploy to Heroku.
+Next, in the **Procfile**, specify the processes your application should run. The processes specified in this file will automatically boot on deployment to Heroku.
 
 ```bash
 web: gunicorn config.wsgi --log-file -
@@ -265,7 +265,7 @@ The **web** process is where we pass our **Gunicorn** config. First, we pass the
 
 Heroku will install a default Python version if you don't specify one, but if you want to pick your Python version, you need to create a **runtime.txt** file.
 
-Python versions supported by Heroku are listed on:
+Python versions supported by Heroku are listed at:
 https://devcenter.heroku.com/articles/python-support#supported-runtimes
 
 From the **root** directory, run:
@@ -291,7 +291,7 @@ Specify the **Node.js** and **npm** versions to be used on Heroku in the **engin
 },
 ```
 
-Always specify the Node.js and npm versions that match the runtime you’re developing and testing with. To find your versions locally, run:
+Always specify the Node.js and npm versions that match the runtime you’re developing and testing with. To find your versions locally, run the following:
 
 ```bash
 node --version
@@ -362,9 +362,9 @@ Add two buildpacks:
 
 #### 11. Add Config Vars
 
-On Heroku Dashboard, go to **Settings**, scroll down to the **Config Vars** section, and click **Reveal Config Vars**.
+On the Heroku Dashboard, go to **Settings**, scroll down to the **Config Vars** section, and click **Reveal Config Vars**.
 
-Here, add all the variables stored in the **config/.env** and **.env.production** files, and one additional variable: DISABLE_COLLECTSTATIC.
+Here, add all the variables stored in the **config/.env** and **.env.production** files and one additional variable: DISABLE_COLLECTSTATIC.
 
 ```bash
 SECRET_KEY=yoursecretkey
