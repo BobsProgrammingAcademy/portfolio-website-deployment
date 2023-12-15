@@ -2,23 +2,28 @@
 
 This is a portfolio website built using **Django 4**, **Django REST Framework 3**, **Next.js 13**, and **Material UI 5**. The app uses a **PostgreSQL** database to store data.
 
+
 ### Dark mode:
 
 ![plot](https://github.com/BobsProgrammingAcademy/Portfolio-Website-Deployment/blob/main/public/images/dark_theme.png?raw=true)
 
+
 ### Light mode:
 
 ![plot](https://github.com/BobsProgrammingAcademy/Portfolio-Website-Deployment/blob/main/public/images/light_theme.png?raw=true)
+
 
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the application](#run-the-application)
+- [Running the tests](#run-the-tests)
 - [Adding data to the application](#add-data-to-the-application)
 - [Customizing the application](#customize-the-application)
 - [Deployment to Heroku](#deployment-to-heroku)
 - [Copyright and License](#copyright-and-license)
+
 
 ### Prerequisites
 
@@ -35,6 +40,7 @@ Install the following prerequisites:
 Other prerequisites:
 
 1. [Heroku account](https://signup.heroku.com/)
+
 
 ### Installation
 
@@ -171,6 +177,7 @@ Next, declare environment variables in both the **.env.development** and **.env.
 BACKEND_URL=http://127.0.0.1:8000
 ```
 
+
 ### Run the application
 
 To run the application, you need to have both the backend and the frontend up and running.
@@ -194,6 +201,18 @@ npm run dev
 #### 3. View the application
 
 Go to http://localhost:3000/ to view the application.
+
+
+### Run the tests
+
+#### 1. Run the backend tests
+
+From the **root** directory, run:
+
+```bash
+python manage.py test --pattern="tests.py"
+
+```
 
 ### Add data to the application
 
@@ -242,6 +261,7 @@ To modify the two buttons in the Hero section, make changes in the `src/componen
 #### Displaying your location on the map
 
 To display your location on the map in the **Contact** section, you need to set the coordinates (latitude and longitude) of your location in the `src/components/Contact.js` file.
+
 
 ### Deployment to Heroku
 
@@ -440,6 +460,7 @@ git push heroku master
 #### 14. View the application
 
 Go to Heroku Dashboard and click the **Open app** button to view the deployed application.
+
 
 ### Copyright and License
 
