@@ -73,7 +73,7 @@ const Sidebar = ({ open, onClose }) => {
                   textDecoration='none'
                   flexGrow={1}
                 >
-                  Bob's Programming Academy
+                  Bob&apos;s Programming Academy
                 </Typography>
               </IconButton>
             </Link>
