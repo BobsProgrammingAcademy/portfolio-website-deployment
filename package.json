@@ -42,9 +42,12 @@
     "run": "^1.5.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
     "@testing-library/jest-dom": "^6.4.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
+    "babel-jest": "^29.7.0",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "eslint-plugin-jest": "^27.6.3",
