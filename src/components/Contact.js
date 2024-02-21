@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -21,7 +21,7 @@ const coordinates = [53.35014, -6.266155];
 const Contact = () => {
   const theme = useTheme();
 
-  const [contact, setContact] = React.useState([]);
+  const [contact, setContact] = useState([]);
 
   const fetchContact = () => {
     axios
@@ -37,7 +37,7 @@ const Contact = () => {
       .catch((error) => console.log(error));
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchContact();
   }, []);
 
@@ -58,8 +58,8 @@ const Contact = () => {
               align='center'
               fontWeight={700}
               marginTop={theme.spacing(1)}
-              data-aos='fade-up'
               gutterBottom
+              data-aos='fade-up'
             >
               Get in touch
             </Typography>
@@ -67,9 +67,9 @@ const Contact = () => {
               variant='h6'
               align='center'
               color={theme.palette.text.secondary}
-              data-aos='fade-up'
               marginTop={4}
               marginBottom={6}
+              data-aos='fade-up'
             >
               We would love to hear from you
             </Typography>
