@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -15,7 +15,7 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 const Technologies = () => {
   const theme = useTheme();
 
-  const [technologies, setTechnologies] = React.useState([]);
+  const [technologies, setTechnologies] = useState([]);
 
   const fetchTechnologies = () => {
     axios
@@ -31,7 +31,7 @@ const Technologies = () => {
       .catch((error) => console.log(error));
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchTechnologies();
   }, []);
 
@@ -51,8 +51,8 @@ const Technologies = () => {
               align='center'
               fontWeight={700}
               marginTop={theme.spacing(1)}
-              data-aos='fade-up'
               gutterBottom
+              data-aos='fade-up'
             >
               Technologies
             </Typography>
@@ -60,9 +60,9 @@ const Technologies = () => {
               variant='h6'
               align='center'
               color={theme.palette.text.secondary}
-              data-aos='fade-up'
               marginTop={4}
               marginBottom={6}
+              data-aos='fade-up'
             >
               Technologies we use to build our products
             </Typography>
@@ -71,19 +71,19 @@ const Technologies = () => {
             {technologies.map((item, i) => (
               <Grid item xs={12} md={3} key={i}>
                 <Box
+                  component={Card}
                   width={1}
                   height={1}
-                  data-aos='fade-up'
-                  data-aos-delay={100}
-                  data-aos-offset={100}
-                  data-aos-duration={600}
-                  component={Card}
                   display='flex'
                   flexDirection='column'
                   alignItems='center'
                   boxShadow={0}
                   variant='outlined'
                   borderRadius={2}
+                  data-aos='fade-up'
+                  data-aos-delay={100}
+                  data-aos-offset={100}
+                  data-aos-duration={600}
                 >
                   <CardContent
                     sx={{
