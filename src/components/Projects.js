@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Box from '@mui/material/Box';
@@ -19,7 +19,7 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 const Projects = () => {
   const theme = useTheme();
 
-  const [projects, setProjects] = React.useState([]);
+  const [projects, setProjects] = useState([]);
 
   const fetchProjects = () => {
     axios
@@ -35,7 +35,7 @@ const Projects = () => {
       .catch((error) => console.log(error));
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchProjects();
   }, []);
 
@@ -54,8 +54,8 @@ const Projects = () => {
             align='center'
             fontWeight={700}
             marginTop={theme.spacing(1)}
-            data-aos='fade-up'
             gutterBottom
+            data-aos='fade-up'
           >
             Projects
           </Typography>
@@ -63,9 +63,9 @@ const Projects = () => {
             variant='h6'
             color={theme.palette.text.secondary}
             align='center'
-            data-aos='fade-up'
             marginTop={4}
             marginBottom={6}
+            data-aos='fade-up'
           >
             View some of our latest projects
           </Typography>
