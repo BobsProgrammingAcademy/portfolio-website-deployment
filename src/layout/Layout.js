@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
     defaultMatches: true,
   });
 
-  const [openSidebar, setOpenSidebar] = React.useState(false);
+  const [openSidebar, setOpenSidebar] = useState(false);
 
   const handleSidebarOpen = () => {
     setOpenSidebar(true);
