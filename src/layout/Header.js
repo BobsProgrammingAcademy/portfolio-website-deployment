@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
@@ -34,7 +34,7 @@ import CustomButton from '../components/CustomButton';
 
 const Header = ({ onSidebarOpen }) => {
   const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
+  const colorMode = useContext(ColorModeContext);
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 38,
