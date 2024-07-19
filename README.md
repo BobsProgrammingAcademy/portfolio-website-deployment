@@ -3,12 +3,12 @@
 This is a portfolio website built using **Django 4**, **Django REST Framework 3**, **Next.js 13**, and **Material UI 5**. The app uses a **PostgreSQL** database to store data.
 
 
-### Dark mode:
+## Dark mode:
 
 ![plot](https://github.com/BobsProgrammingAcademy/Portfolio-Website-Deployment/blob/main/public/images/dark_theme.png?raw=true)
 
 
-### Light mode:
+## Light mode:
 
 ![plot](https://github.com/BobsProgrammingAcademy/Portfolio-Website-Deployment/blob/main/public/images/light_theme.png?raw=true)
 
@@ -25,7 +25,7 @@ This is a portfolio website built using **Django 4**, **Django REST Framework 3*
 - [Copyright and License](#copyright-and-license)
 
 
-### Prerequisites
+## Prerequisites
 
 Install the following prerequisites:
 
@@ -42,9 +42,9 @@ Other prerequisites:
 1. [Heroku account](https://signup.heroku.com/)
 
 
-### Installation
+## Installation
 
-#### Backend
+### Backend
 
 #### 1. Create a virtual environment
 
@@ -153,7 +153,7 @@ python manage.py createsuperuser
 
 When prompted, enter a username, email, and password.
 
-#### Frontend
+### Frontend
 
 #### 1. Install required frontend dependencies
 
@@ -177,8 +177,7 @@ Next, declare environment variables in both the **.env.development** and **.env.
 BACKEND_URL=http://127.0.0.1:8000
 ```
 
-
-### Run the application
+## Run the application
 
 To run the application, you need to have both the backend and the frontend up and running.
 
@@ -202,8 +201,7 @@ npm run dev
 
 Go to http://localhost:3000/ to view the application.
 
-
-### Run the tests
+## Run the tests
 
 #### 1. Run the backend tests
 
@@ -214,7 +212,6 @@ python manage.py test --pattern="tests.py"
 
 ```
 
-
 #### 2. Run the frontend tests
 
 From the **root** directory, run:
@@ -223,8 +220,7 @@ From the **root** directory, run:
 npm run test
 ```
 
-
-### Add data to the application
+## Add data to the application
 
 Add data through Django Admin.
 
@@ -234,7 +230,7 @@ Go to http://127.0.0.1:8000/admin to access the Django Admin interface and sign 
 
 This section describes how to customize the application.
 
-#### Changing Section Titles and Subtitles
+### Changing Section Titles and Subtitles
 
 #### 1. About
 
@@ -252,30 +248,29 @@ To modify the title and subtitle of the **Technologies** section, make changes i
 
 To modify the title and subtitle of the **Contact** section, make changes in the `src/components/Contact.js` file.
 
-#### Changing Colors
+### Changing Colors
 
 To modify the colors in the application, make changes in the `src/theme/theme.js` file.
 
-#### Changing Fonts
+### Changing Fonts
 
 To modify the fonts in the application, first, add a new font to the `src/pages/_document.js` file, and then make changes in the `src/theme/typography.js` file.
 
-#### Changing Logo
+### Changing Logo
 
 To modify the logo in the application, make changes in the `src/layout/Header.js` and `src/layout/Sidebar.js` files.
 
-#### Changing Buttons in the Hero Section
+### Changing Buttons in the Hero Section
 
 To modify the two buttons in the Hero section, make changes in the `src/components/HeroButtons.js` file.
 
-#### Displaying your location on the map
+### Displaying your location on the map
 
 To display your location on the map in the **Contact** section, you need to set the coordinates (latitude and longitude) of your location in the `src/components/Contact.js` file.
 
+## Deployment to Heroku
 
-### Deployment to Heroku
-
-#### 1. Create Procfile
+### 1. Create Procfile
 
 From the **root** directory, run:
 
@@ -291,7 +286,7 @@ web: gunicorn config.wsgi --log-file -
 
 The **web** process is where we pass our **Gunicorn** config. First, we pass the **WSGI** file, which is located in the **config** directory. Next, we pass the **--logfile** flag, which specifies that the log file should get routed to Heroku.
 
-#### 2. Create runtime.txt
+### 2. Create runtime.txt
 
 Heroku will install a default Python version if you don't specify one, but if you want to pick your Python version, you need to create a **runtime.txt** file.
 
@@ -310,7 +305,7 @@ Next, in the **runtime.txt** file, specify your Python version with the prefix *
 python-X.X.XX
 ```
 
-#### 3. Specify Node.js and npm versions in package.json
+### 3. Specify Node.js and npm versions in package.json
 
 Specify the **Node.js** and **npm** versions to be used on Heroku in the **engines** section of the **package.json** file.
 
@@ -331,7 +326,7 @@ node --version
 npm --version
 ```
 
-#### 4. Add a deploy script to package.json
+### 4. Add a deploy script to package.json
 
 Add the following deploy script to the **scripts** section of the **package.json** file:
 
@@ -339,7 +334,7 @@ Add the following deploy script to the **scripts** section of the **package.json
 "deploy": "npm run build && rm -rf output static && next export -o output && mv output static && python integration_script.py -d static",
 ```
 
-#### 5. Run the deploy script
+### 5. Run the deploy script
 
 From the **root** directory, run:
 
@@ -349,7 +344,7 @@ npm run deploy
 
 This will create an optimized production build.
 
-#### 6. Collect static files into STATIC_ROOT
+### 6. Collect static files into STATIC_ROOT
 
 From the **root** directory, run:
 
@@ -359,13 +354,13 @@ python manage.py collectstatic
 
 This will collect the static files into a location defined in **STATIC_ROOT** in the **config/settings.py** file.
 
-#### 7. Log in to your Heroku account
+### 7. Log in to your Heroku account
 
 Log in to your Heroku account:
 
 https://id.heroku.com/login
 
-#### 8. Create a new app using the Heroku Dashboard
+### 8. Create a new app using the Heroku Dashboard
 
 Go to https://dashboard.heroku.com/apps and click the **Create new app** button.
 
@@ -373,7 +368,7 @@ Next, select an **app name** and specify a **region** where your application wil
 
 Finally, click the **Create app** button.
 
-#### 9. Add your app to ALLOWED_HOSTS in settings.py
+### 9. Add your app to ALLOWED_HOSTS in settings.py
 
 Add your app to the **ALLOWED_HOSTS** list in the **config/settings.py** file.
 
@@ -381,7 +376,7 @@ Add your app to the **ALLOWED_HOSTS** list in the **config/settings.py** file.
 'yourappname.herokuapp.com',
 ```
 
-#### 10. Add Heroku Buildpacks
+### 10. Add Heroku Buildpacks
 
 On the Heroku Dashboard, go to **Settings**, scroll down to the **Buildpacks** section, and click **Add buildpack**.
 
@@ -390,7 +385,7 @@ Add two buildpacks:
 - nodejs
 - python
 
-#### 11. Add Config Vars
+### 11. Add Config Vars
 
 On the Heroku Dashboard, go to **Settings**, scroll down to the **Config Vars** section, and click **Reveal Config Vars**.
 
@@ -407,7 +402,7 @@ BACKEND_URL=http://127.0.0.1:8000
 DISABLE_COLLECTSTATIC=1
 ```
 
-#### 12. Set up PostgreSQL on Heroku
+### 12. Set up PostgreSQL on Heroku
 
 With **Heroku CLI** installed, from the **root** directory, run:
 
@@ -429,7 +424,7 @@ Finally, push your local PostgreSQL database to Heroku Postgres by running the c
 PGUSER=<USERNAME> PGPASSWORD=<PASSWORD> heroku pg:push postgres://<HOST>/<DB_NAME> <HEROKU_POSTGRES_DB_NAME> --app <APP_NAME>
 ```
 
-#### 13. Select the Deployment method
+### 13. Select the Deployment method
 
 On Heroku Dashboard, go to **Deploy**, scroll down to the **Deployment method** section, and select your preferred deployment method to see the deployment instructions.
 
@@ -467,11 +462,10 @@ git commit -am "Your comment"
 git push heroku master
 ```
 
-#### 14. View the application
+### 14. View the application
 
 Go to Heroku Dashboard and click the **Open app** button to view the deployed application.
 
-
-### Copyright and License
+## Copyright and License
 
 Copyright © 2022 Bob's Programming Academy. Code released under the MIT license.
