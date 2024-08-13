@@ -41,7 +41,7 @@ const Header = ({ onSidebarOpen }) => {
   });
 
   return (
-    <React.Fragment>
+    <>
       <AppBar
         position='sticky'
         color='transparent'
@@ -189,7 +189,7 @@ const Header = ({ onSidebarOpen }) => {
           {theme.palette.mode === 'dark' && <Divider />}
         </Toolbar>
       </AppBar>
-    </React.Fragment>
+    </>
   );
 };
 
