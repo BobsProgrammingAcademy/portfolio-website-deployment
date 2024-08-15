@@ -29,7 +29,7 @@ const Sidebar = ({ open, onClose }) => {
   const theme = useTheme();
 
   return (
-    <React.Fragment>
+    <>
       <Drawer
         anchor='left'
         onClose={() => onClose()}
@@ -135,7 +135,7 @@ const Sidebar = ({ open, onClose }) => {
           </Box>
         </Box>
       </Drawer>
-    </React.Fragment>
+    </>
   );
 };
 
