@@ -2,7 +2,6 @@ import os
 import dj_database_url
 from decouple import config
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = config('SECRET_KEY')
