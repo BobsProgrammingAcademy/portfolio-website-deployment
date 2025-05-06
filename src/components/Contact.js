@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Map, Marker } from 'pigeon-maps';
 import axios from 'axios';
+
+// Material UI
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
@@ -7,7 +10,6 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
-import { Map, Marker } from 'pigeon-maps';
 
 // Material Icons
 import EmailIcon from '@mui/icons-material/Email';
