@@ -1,4 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
+
+// Material UI
 import { createTheme } from '@mui/material/styles';
 import typography from './typography';
 
