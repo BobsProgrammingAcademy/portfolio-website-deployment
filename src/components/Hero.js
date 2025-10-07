@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
+// Components
 import HeroButtons from './HeroButtons';
 
 axios.defaults.xsrfCookieName = 'csrftoken';
