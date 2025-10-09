@@ -10,6 +10,7 @@ import { CacheProvider } from '@emotion/react';
 
 import 'aos/dist/aos.css';
 
+// Components
 import { theme as customTheme } from '../theme';
 import createEmotionCache from '../utils/createEmotionCache';
 import ColorModeContext from '../components/ColorModeContext';
